@@ -91,18 +91,6 @@ The code is strictly organized into clean logical blocks mirroring a multi-file 
 
 ---
 
-## 🛠️ How to Play Locally
-
-Since the game uses purely client-side technologies, you can run it without any local build server.
-
-### Option 1: Direct Run (Double-Click)
-Simply double-click the `index.html` file in your file explorer to open and play the game in your default web browser.
-
-### Option 2: Live Server (Recommended)
-If you use VS Code, open the project directory and use the **Live Server** extension to launch a local dev server with auto-reload capabilities.
-
----
-
 ## 🔧 Technologies Used
 
 - **Markup**: HTML5 Semantic Elements, Inline SVGs
