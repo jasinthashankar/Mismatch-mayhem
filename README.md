@@ -6,10 +6,11 @@ Mismatch Mayhem is a premium, fully-responsive, single-file browser memory-match
 
 ## 🚀 Live Demo
 
-Check out the live deployment of Mismatch Mayhem:
+Play Mismatch Mayhem live in your browser:
+**[mismatch-mayhem.vercel.app](https://mismatch-mayhem.vercel.app)**
+
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://mismatch-mayhem.vercel.app)
 
-*(Note: The link above points to the deployment URL. We will update it once the Vercel deploy finishes successfully).*
 
 ---
 
