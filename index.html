@@ -246,7 +246,7 @@ a{color:inherit;}
 /* =========================================================
    14. OVERLAYS
    ========================================================= */
-.overlay{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,4,10,.72);backdrop-filter:blur(6px);}
+.overlay{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(3,4,10,.72);backdrop-filter:blur(6px);}
 .overlay.active{display:flex;animation:fadeIn .3s ease;}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 .modal{width:100%;max-width:440px;padding:32px 28px;text-align:center;position:relative;animation:modalIn .4s cubic-bezier(.2,.9,.25,1.2);max-height:88vh;overflow-y:auto;}
@@ -266,7 +266,7 @@ a{color:inherit;}
 .confetti{position:absolute;top:-20px;border-radius:2px;animation:confettiFall linear forwards;}
 @keyframes confettiFall{to{transform:translateY(110vh) rotate(720deg);opacity:.2;}}
 
-.toast-wrap{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:70;display:flex;flex-direction:column;gap:10px;align-items:center;}
+.toast-wrap{position:fixed;top:96px;right:18px;z-index:70;display:flex;flex-direction:column;gap:10px;align-items:flex-end;max-width:min(320px, calc(100vw - 36px));}
 .toast{padding:12px 20px;border-radius:14px;display:flex;align-items:center;gap:12px;min-width:260px;border:1px solid var(--gold);box-shadow:0 12px 30px -10px var(--gold);animation:toastIn .4s ease, toastOut .4s ease 3.2s forwards;}
 @keyframes toastIn{from{opacity:0;transform:translateY(-16px) scale(.9);}to{opacity:1;transform:translateY(0) scale(1);}}
 @keyframes toastOut{to{opacity:0;transform:translateY(-10px) scale(.95);}}
@@ -354,6 +354,8 @@ a{color:inherit;}
   .board[data-count="16"], .board[data-count="24"], .board[data-count="36"]{max-width:100%;}
   .modal{padding:24px 18px;}
   .profile-head{flex-direction:column;text-align:center;}
+  .toast-wrap{left:12px;right:12px;top:90px;max-width:none;}
+  .toast{min-width:0;width:100%;}
 }
 @media (max-width:420px){
   .stat-card .s-value{font-size:1.05rem;}
@@ -793,6 +795,7 @@ const UI = (() => {
     el.className="toast glass-strong"+(cls?" "+cls:"");
     el.innerHTML = `<div class="t-ic">${icon}</div><div><div class="t-title">${title}</div><div class="t-sub">${sub}</div></div>`;
     wrap.appendChild(el);
+    while(wrap.children.length>4){ wrap.removeChild(wrap.firstElementChild); }
     setTimeout(()=>el.remove(), 3700);
   }
   function confetti(n=90){
